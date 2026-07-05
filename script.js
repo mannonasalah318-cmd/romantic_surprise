@@ -39,9 +39,9 @@ function checkPassword() {
 
         setTimeout(() => {
 
-            document.getElementById("loading").style.display = "none";
-
             document.getElementById("main").style.display = "block";
+           
+            document.getElementById("loading").style.display = "none";
 
             startMusic();
             startMessages();
