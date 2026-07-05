@@ -1,25 +1,31 @@
 /* =========================
-   💗 FLOATING HEARTS
+   💗 FLOATING HEARTS (SAFE)
 ========================= */
 
-const hearts = document.querySelector(".hearts");
+document.addEventListener("DOMContentLoaded", () => {
 
-function createHeart() {
-    const heart = document.createElement("span");
-    heart.innerHTML = "❤";
+    const hearts = document.querySelector(".hearts");
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 30) + "px";
-    heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+    function createHeart() {
 
-    hearts.appendChild(heart);
+        if (!hearts) return; // حماية مهمة
 
-    setTimeout(() => {
-        heart.remove();
-    }, 11000);
-}
+        const heart = document.createElement("span");
+        heart.innerHTML = "❤";
 
-setInterval(createHeart, 250);
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (15 + Math.random() * 30) + "px";
+        heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+        hearts.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 11000);
+    }
+
+    setInterval(createHeart, 250);
+});
 
 
 /* =========================
@@ -28,57 +34,68 @@ setInterval(createHeart, 250);
 
 function checkPassword() {
 
-    const password = document.getElementById("password").value;
+    const password = document.getElementById("password");
     const error = document.getElementById("error");
 
-    if (password === "love") {
+    if (!password) return;
+
+    if (password.value === "love") {
 
         document.getElementById("login").style.display = "none";
 
-        document.getElementById("loading").style.display = "flex";
+        const loading = document.getElementById("loading");
+        const main = document.getElementById("main");
+
+        if (loading) loading.style.display = "flex";
 
         setTimeout(() => {
 
-            document.getElementById("main").style.display = "block";
-           
-            document.getElementById("loading").style.display = "none";
+            if (loading) loading.style.display = "none";
+            if (main) main.style.display = "block";
 
-            startMusic();
-            startMessages();
-            startCounter();
+            try {
+                startMusic();
+                startMessages();
+                startCounter();
+            } catch (e) {
+                console.log("Error:", e);
+            }
 
         }, 3000);
 
     } else {
-        error.innerHTML = "❌ الباسورد غلط";
+        if (error) error.innerHTML = "❌ الباسورد غلط";
     }
 }
 
 
 /* =========================
-   🎵 MUSIC
+   🎵 MUSIC (SAFE)
 ========================= */
 
 function startMusic() {
 
     const music = document.getElementById("music");
 
+    if (!music) return;
+
     music.volume = 0.5;
 
     music.play().catch(() => {
         console.log("Autoplay blocked");
     });
-
 }
 
 
 /* =========================
-   💌 SHOW MESSAGES ONE BY ONE
+   💌 MESSAGES (SAFE)
 ========================= */
 
 function startMessages() {
 
     const sections = document.querySelectorAll(".message");
+
+    if (!sections.length) return;
 
     sections.forEach((section, index) => {
 
@@ -102,11 +119,17 @@ function startMessages() {
 
 
 /* =========================
-   ⏳ ANNIVERSARY COUNTER
-   from 25/12/2025
+   ⏳ COUNTER (SAFE)
 ========================= */
 
 function startCounter() {
+
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
+
+    if (!days || !hours || !minutes || !seconds) return;
 
     const startDate = new Date("2025-12-25T00:00:00");
 
@@ -116,23 +139,22 @@ function startCounter() {
 
         const diff = now - startDate;
 
-        const seconds = Math.floor(diff / 1000);
-        const minutes = Math.floor(seconds / 60);
-        const hours = Math.floor(minutes / 60);
-        const days = Math.floor(hours / 24);
+        const sec = Math.floor(diff / 1000);
+        const min = Math.floor(sec / 60);
+        const hr = Math.floor(min / 60);
+        const day = Math.floor(hr / 24);
 
-        document.getElementById("days").innerText = days;
-        document.getElementById("hours").innerText = hours % 24;
-        document.getElementById("minutes").innerText = minutes % 60;
-        document.getElementById("seconds").innerText = seconds % 60;
+        days.innerText = day;
+        hours.innerText = hr % 24;
+        minutes.innerText = min % 60;
+        seconds.innerText = sec % 60;
 
     }, 1000);
-
 }
 
 
 /* =========================
-   🎁 FINAL GIFT (QR SHOW)
+   🎁 FINAL GIFT
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,9 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("giftBtn");
     const box = document.getElementById("giftBox");
 
+    if (!btn || !box) return;
+
     btn.addEventListener("click", () => {
 
         box.style.display = "block";
+
         box.scrollIntoView({
             behavior: "smooth",
             block: "center"
