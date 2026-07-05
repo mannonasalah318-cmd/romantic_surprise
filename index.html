@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Kookie ❤️</title>
+
+    <link rel="icon" href="assets/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- خلفية القلوب -->
+    <div class="hearts"></div>
+
+    <!-- النجوم -->
+    <div class="stars"></div>
+
+    <!-- اللمعات -->
+    <div class="sparkles"></div>
+
+    <!-- شاشة التحميل -->
+
+    <section id="loading">
+
+        <div class="loading-box">
+
+            <div class="loading-heart">
+                ❤️
+            </div>
+
+            <h1>Loading Love...</h1>
+
+        </div>
+
+    </section>
+
+    <!-- شاشة الباسورد -->
+
+    <section id="login">
+
+        <div class="glass">
+
+            <h1>Enter Password ❤️</h1>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password">
+
+            <button onclick="checkPassword()">
+                Open
+            </button>
+
+            <p id="error"></p>
+
+        </div>
+
+    </section>
+
+    <!-- الموسيقى -->
+
+    <audio
+        id="music"
+        loop>
+
+        <source
+            src="assets/music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <!-- الموقع -->
+
+    <main id="main">
+
+        <!-- الهيدر -->
+
+        <section class="hero message">
+
+            <h1>
+                For My Kookie ❤️
+            </h1>
+
+            <p>
+                Every moment with you is my favorite memory.
+            </p>
+
+        </section>
+
+        <!-- العداد -->
+
+        <section class="message">
+
+            <div class="glass anniversary">
+
+                <h2>
+                    ❤️ Anniversary
+                </h2>
+
+                <p class="date">
+
+                    Since
+
+                    <br>
+
+                    25 / 12 / 2025
+
+                </p>
+
+                <div id="counter">
+
+                    <div>
+
+                        <span id="days">
+                            0
+                        </span>
+
+                        <small>Days</small>
+
+                    </div>
+
+                    <div>
+
+                        <span id="hours">
+                            0
+                        </span>
+
+                        <small>Hours</small>
+
+                    </div>
+
+                    <div>
+
+                        <span id="minutes">
+                            0
+                        </span>
+
+                        <small>Minutes</small>
+
+                    </div>
+
+                    <div>
+
+                        <span id="seconds">
+                            0
+                        </span>
+
+                        <small>Seconds</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- الدب -->
+
+        <section class="message">
+
+            <div class="glass teddy-card">
+
+                <img
+                    src="assets/teddy.png"
+                    class="teddy">
+
+                <h2>
+
+                    🩷
+
+                    This little teddy
+
+                    loves you too.
+
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- الرسالة الأولى -->
+
+        <section class="message">
+
+            <div class="envelope">
+
+                <div class="letter">
+
+                    <p class="typing">
+
+                        دمت لي شيئًا جميلًا لا ينتهي.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- الفيديو الأول -->
+
+        <section class="message">
+
+            <video
+                class="video"
+                controls>
+
+                <source
+                    src="assets/video1.mp4"
+                    type="video/mp4">
+
+            </video>
+
+        </section>        <!-- الرسالة الثانية -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        وأغار من عينٍ تتأمل عينيك، وأنا المُغرم بها.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الرسالة الثالثة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        ويكفيني من هذا العمر أنني حظيت بك.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الفيديو الثاني -->
+
+        <section class="message">
+
+            <video class="video" controls>
+
+                <source
+                    src="assets/video2.mp4"
+                    type="video/mp4">
+
+            </video>
+
+        </section>
+
+        <!-- الرسالة الرابعة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        بحبك يا كوكييي 🤍
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الرسالة الخامسة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        لا هوى بعد هواك يُهوى، وماذا بعد عيناك أهوى يا تُرى؟
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الفيديو الثالث -->
+
+        <section class="message">
+
+            <video class="video" controls>
+
+                <source
+                    src="assets/video3.mp4"
+                    type="video/mp4">
+
+            </video>
+
+        </section>
+
+        <!-- الرسالة السادسة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        أنت الصدفة الوحيدة التي تمنيت لو تتكرر كل يوم.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الرسالة السابعة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        أغار عليك من ماضٍ لم أكن فيه!
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الرسالة الثامنة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        ليتني كنتُ نظراتك، لأراك كلما نظرت.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- الرسالة التاسعة -->
+
+        <section class="message">
+
+            <div class="envelope">
+                <div class="letter">
+                    <p class="typing">
+                        كل الطرق تنتهي عندك، وكل قلبي يبدأ منك.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- النهاية -->
+
+        <section class="message final-section">
+
+            <h1>
+                بحبك يا كوكييي ♡
+            </h1>
+
+            <p class="final-text">
+
+                بس لسه المفاجأة مخلصتش... 🤍
+
+            </p>
+
+            <button id="giftBtn">
+
+                🎁 Open Your Final Gift
+
+            </button>
+
+            <div id="giftBox">
+
+                <div class="qr-card">
+
+                    <img
+                        src="assets/qr.png"
+                        alt="QR Code"
+                        class="qr">
+
+                    <h2>
+
+                        Scan Me ❤️
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
